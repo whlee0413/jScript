@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataType</title>
+</head>
+
+<body>
+    <script>
+        var length;
+        var childYear = 7;
+        var isTrue = false;
+        console.log(typeof isTrue);
+
+        var friend = {
+            firstName: "gildong",
+            lastName: "Hong",
+            age: 16,
+            getFullName: function () 
+            { return this.firstName + ":" + this.lastName }
+        }
+        for(field in friend){ //get field.
+            console.log(field+" , "+friend[field]);
+        }
+        console.log(friend.firstName + "," + friend.lastName);
+        console.log(friend["firstName"] + "," + friend["lastName"]);
+        console.log(friend.getFullName());
+        function getName() {
+            return "LeeWonho";
+        }
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(getName());
+        console.log("결과는 " + sum(10, 20));
+
+        var numAry = [1,2,"String",4,5];
+        var strAry = ["Hello", "nice", "good"];
+
+        for(var i=0; i<numAry.length; i++){
+            console.log(numAry[i])
+        }
+
+
+        var friend1 = {
+            firstName: "gildong",
+            lastName: "Hong",
+            age: 16
+            
+        }
+        var friend2 = {
+            firstName: "seongwoo",
+            lastName: "Hong",
+            age: 36
+            
+        }
+        var friend3 = {
+            firstName: "junwon",
+            lastName: "Ha",
+            age: 26
+            
+        }
+
+        var friends = [friend1,friend2,friend3];
+        for(obj of friends){
+            console.log(obj);
+        }
+
+    </script>
+</body>
+
+</html>
