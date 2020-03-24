@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="fristName" id="firstName" value="gildong" >
+    <input type="text" name="lastName" id="lastName" value="Hong">
+    <input type="text" name="age" id="age" value="16">
+    <button id="btn" onclick="translateBtn()">Click</button> <!-- button#btn -->
+
+    <table id="tbl" border="1">
+        <!-- table>tr>td*3-->
+        <tbody>
+            <tr>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Age</td>
+            </tr>
+            <tr>
+                <td >junwon</td>
+                <td>Ha</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>gildong</td>
+                <td >Hong</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>jaeeon</td>
+                <td>Yun</td>
+                <td>36</td>
+            </tr>
+        </tbody>
+    </table>
+        <script>
+            var tds = document.getElementsByTagName("td")
+            var btn = document.getElementById("btn");
+            btn.onmouseover = function(){
+                this.style.backgroundColor="yellow";
+                this.style.width = "100px";
+            }
+            btn.onmouseout = function( ){
+                this.style.backgroundColor="";
+                this.style.width = "50px";
+            }
+
+            console.log(tds);
+
+            function translateBtn(){
+                var na = document.getElementById("firstName").value;
+                tds[3].childNodes[0].nodeValue = na;
+                tds[3].style.backgroundColor="yellow";
+
+                var na = document.getElementById("lastName").value;
+                tds[7].childNodes[0].nodeValue = na;
+                tds[7].style.backgroundColor="yellow";
+
+                var na = document.getElementById("age").value;
+                tds[11].childNodes[0].nodeValue = na;
+                tds[11].style.backgroundColor="yellow";
+
+            }
+        </script>
+
+</body>
+
+</html>

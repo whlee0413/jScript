@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn" onclick="addTr()">Click</button>
+
+    <table id="tbl" border="1">
+        <tr>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>AGE</th>
+        </tr>
+    </table>
+    <script>
+
+        function addTr() {
+            var person = [
+                { name: "Hong", phone: "1212-1212", age: 20 },
+                { name: "Bak", phone: "2323-3434", age: 23 },
+                { name: "Hwang", phone: "1234-1234", age: 27 },
+                { name: "Lee", phone: "3456-3423", age: 25 }
+            ];
+
+            var $tr, $td, $text;
+            for (obj of person) {
+                $tr = document.createElement("tr");
+                        console.log($tr);
+                $text = document.createTextNode(obj.name);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+
+                $text = document.createTextNode(obj["phone"]);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+
+                $text = document.createTextNode(obj.age);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+
+                tbl.appendChild($tr);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="fristName" id="firstName" value="gildong">
+    <input type="text" name="lastName" id="lastName" value="Hong">
+    <input type="text" name="age" id="age" value=16>
+    <button id="btn" onclick="addTr()">Click</button> <!-- button#btn -->
+
+    <table id="tbl" border=1>
+        <!-- table>tr>td*3-->
+        <tr>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Age</td>
+        </tr>
+        <tr>
+            <td>junwon</td>
+            <td>Ha</td>
+            <td>26</td>
+        </tr>
+    </table>
+    <script>
+        var tbl = document.getElementById("tbl");
+
+
+        function addTr() {
+
+
+            var fName = document.getElementById('firstName').value;
+            var lName = document.getElementById('lastName').value;
+            var age = document.getElementById('age').value;
+            
+            var $tr, $td, $text;
+            $tr = document.createElement("tr");
+
+            $td = document.createElement("td");
+            $text = document.createTextNode(fName);
+            $td.appendChild($text);
+            $tr.appendChild($td);
+
+            $text = document.createTextNode(lName);
+            $td = document.createElement("td");
+            $td.appendChild($text);
+            $tr.appendChild($td);
+
+            $text = document.createTextNode(age);
+            $td = document.createElement("td");
+            $td.appendChild($text);
+            $tr.appendChild($td);
+
+            tbl.appendChild($tr);
+
+             fName = document.getElementById('firstName').value= " ";
+             lName = document.getElementById('lastName').value= " ";
+             age = document.getElementById('age').value= " ";
+
+        }
+    </script>
+</body>
+
+</html>
