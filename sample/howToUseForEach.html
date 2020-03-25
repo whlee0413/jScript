@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var arys = [35, 59, 23, 10, 88];
+        arys.push(55); // 55값의 배열을 가장 끝에 추가.
+        arys.unshift(44); // 44값의 배열을 가장 앞에 추가.
+
+        var sum = 0;
+
+        for (var i = 0; i < arys.length; i++) {
+            // if(arys[i]%2 == 1) 홀수.
+            // if(i%2 == 0) 홀수번째만.
+            sum += arys[i]; // sum = sum + arys[i];
+        }
+        //forEach 활용하는 법.
+        // forEach 매개값은 3개 사용 가능
+        console.log("for구문을 활용한 sum의 값: " + sum);
+
+        sum = 0;  //sum 다시 초기화.
+        arys.forEach(function (a, b, c) {
+            // if(a%2 == 1) 홀수.
+            // if(b%2 == 0) 홀수번쨰만.
+            console.log("a: "+a + "  b: "+b + "  c: "+c)
+            sum += a;
+
+        });
+        console.log("forEach를 활용한구문을 활용한 sum의 값: " + sum);
+
+        var objects = [
+            { name: "Kim", age: 25 },
+            { name: "Park", age: 37 },
+            { name: "Choi", age: 30 },
+            { name: "Lee", age: 29 }
+        ]
+        for (fName in objects[0]) {
+            console.log(fName);
+        }
+
+        for (var i = 0; i < objects.length; i++) {
+            for (fName in objects[0]) {
+                console.log(objects[i][fName]); //[][]앞에는 배열인덱스, 뒤에는 필드명
+            }
+
+
+            // console.log(objects[i].name + ", " + objects[i].age)
+            // = console.log(objects[i]["name"] + ", " + objects[i]["age"])
+        }
+
+
+    </script>
+</body>
+
+</html>
